@@ -1,0 +1,28 @@
+        body {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #left-content {
+            width: 40%;
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        #right-content {
+            margin-top: 150px;
+            width: 50%;
+        }
+
+        #pie-chart {
+            height: 400px;
+            width: 100%;
+        }
+        #center-content {
+            margin-top: 80px;
+            width: 100%;
+        }

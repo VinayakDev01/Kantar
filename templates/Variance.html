@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variance Report</title>
+    <!-- Include necessary libraries -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="/static/css/response.css">
+    <script src="/static/js/app.js"></script>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div id="left-content">
+        <h1>Pie Chart for Variance</h1>
+
+        <div id="total-count">
+            <h2>Total Audited Data:
+            {{ total_Varrows-2 }}</h2>
+        </div>
+
+        <div id="variance-count">
+            <h2>Total Variance Count:
+            {{ total_variance_count }}</h2>
+        </div>
+    </div>
+
+    <div id="right-content">
+        <!-- Create a pie chart using Plotly -->
+        <div id="pie-chart"></div>
+
+        <script>
+            var labels = {{ Varlabels | safe }};
+            var data = {{ Vardata | safe }};
+            
+            var trace = {
+                labels: labels,
+                values: data,
+                type: 'pie'
+            };
+
+            var layout = {
+                height: 400,
+                width: '100%'
+            };
+
+            var config = {
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('pie-chart', [trace], layout, config);
+        </script>
+    </div>
+</body>
+</html>

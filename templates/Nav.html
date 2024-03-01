@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronized Navigation Bar and Sidebar</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="Mainpage.html">Overview</a>
+    <a href="Audit.html">Audit Report</a>
+    <a href="Variance.html">Variance Report</a>
+    <input id="srchbar" type="search" placeholder="Search">
+    <img src="/static/images/user.png" class="user" alt="Profile" id="triggerImage" >
+    <button>Login</button>
+</nav>
+<div id="listContainer">
+    <ul>
+        <li>Profile</li>
+        <li>Dashboard</li>
+        <li>Logout</li>
+    </ul>
+</div>
+<script>
+    document.getElementById('triggerImage').addEventListener('click', function () {
+        var listContainer = document.getElementById('listContainer');
+        listContainer.style.display = (listContainer.style.display === 'block') ? 'none' : 'block';
+    });
+</script>
+<!-- Sidebar -->
+<aside>
+    <button onclick="location.href='/';">
+        <img src="/static/images/home.png" alt="Home">
+    </button>
+    Home
+    <button onclick="location.href='Dashboard.html';">
+        <img src="/static/images/dashboard.png" alt="Dashboard">
+    </button>
+    Dashboard
+    <button onclick="location.href='raw_data.html';">
+        <img src="/static/images/raw.png" alt="Raw"> 
+    </button>
+    Raw Data
+    <button onclick="location.href='audited_data.html';">
+        <img src="/static/images/audited.png" alt="Audited">
+    </button>
+    Audited Data
+    <button onclick="location.href='variance_data.html';">
+        <img src="/static/images/variance.png" alt="Variance"> 
+    </button>
+    Variance Data
+</aside>
+
+<!-- Content -->
+<section>
+    <button id="toggle-btn" onclick="toggleSidebar()">☰</button>
+</section>
+
+<!-- Footer -->
+<footer>
+    <img src="/static/images/LogoK.jpeg" class="logo">
+    <p>&copy; 2024 KANTAR PUBLIC All rights reserved.</p>
+</footer>
+
+</body>
+</html>
